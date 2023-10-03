@@ -1,13 +1,43 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
-  </body>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite App</title>
+</head>
+<body class="max-w-3xl mx-auto h-screen bg-primary flex flex-col">
+  <header class="sm:px-0 px-4">
+    <div class="flex flex-row items-center pt-8">
+      <span class="block text-2xl font-mono capitalize py-7 flex-1" id="month_with_year"></span>
+      <div class="divider divider-horizontal h-8 self-center" style="--bc: var(--b3)"></div>
+      <a href="https://vk.com/do_is31" target="_blank">Доска объявлений</a>
+      <div class="divider divider-horizontal h-8 self-center" style="--bc: var(--b3)"></div>
+      <a href="https://vk.com/is2021" target="_blank">ИС-2021</a>
+    </div>
+    <div class="mb-7" id="weeks">
+      <button class="btn btn-accent rounded-3xl">
+        Вт, 4
+      </button>
+      <button class="btn rounded-3xl">
+        Ср, 5
+      </button>
+      <button class="btn rounded-3xl">
+        Чт, 6
+      </button>
+      <button class="btn rounded-3xl">
+        Пт, 7
+      </button>
+    </div>
+  </header>
+  <main class="bg-base-200 rounded-t-3xl p-6 w-full flex-1">
+  </main>
+  <script type="module" src="/main.js"></script>
+</body>
+
+<template id="day_card">
+  <button class="btn btn-accent rounded-3xl">
+    Вт, 4
+  </button>
+</template>
 </html>
