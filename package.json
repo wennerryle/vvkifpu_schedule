@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "eslint": "eslint --color --ext .html,.js,.json *.* src",
     "dev": "vite --host",
     "build": "vite build",
     "preview": "vite preview"
@@ -11,6 +12,8 @@
   "devDependencies": {
     "autoprefixer": "^10.4.16",
     "daisyui": "^3.8.3",
+    "eslint": "^8.51.0",
+    "eslint-config-auto": "^0.7.3",
     "tailwindcss": "^3.3.3",
     "vite": "^4.4.5"
   },

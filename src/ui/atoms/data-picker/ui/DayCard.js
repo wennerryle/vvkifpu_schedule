@@ -1,7 +1,7 @@
 import { LitElement, css, html } from 'lit'
 import { classMap } from 'lit/directives/class-map.js'
 
-export class dayCard extends LitElement {
+export class DayCard extends LitElement {
     static properties = {
         active: {},
         shortNameDay: {},

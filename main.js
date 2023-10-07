@@ -1,10 +1,10 @@
-import './style.css'
-import * as dayjs from 'dayjs'
-import 'dayjs/locale/ru'
-import './src/atoms'
+import "./style.css";
+import * as dayjs from "dayjs";
+import "dayjs/locale/ru";
+import "./src/ui/atoms";
 
-dayjs.locale('ru')
+dayjs.locale("ru");
 
-const monthWithYearHeader = document.getElementById('month_with_year');
+const monthWithYearHeader = document.getElementById("month_with_year");
 
-monthWithYearHeader.textContent = dayjs().format('MMMM, YYYY');
+monthWithYearHeader.textContent = dayjs().format("MMMM, YYYY");
