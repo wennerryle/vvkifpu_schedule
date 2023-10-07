@@ -3,21 +3,30 @@ import { classMap } from 'lit/directives/class-map.js'
 
 export class dayCard extends LitElement {
     static properties = {
-        active: { },
+        active: {},
         shortNameDay: {},
         numberOfDay: {}
     }
     
     constructor() {
         super()
-        this.activeStyling = { active: false }
+        this.classesMap = { active: false }
     }
 
-    set active(isActive) {
-        if(isActive === '')
-            this.activeStyling.active = true
-        else 
-            this.activeStyling.active = false
+    set active(val) {
+        this.classesMap.active = val === '' ? true : false;
+        this.requestUpdate();
+    }
+
+    get active() { return this.classesMap.active; }
+
+    render() {
+        return html`
+            <div class="${classMap(this.classesMap)}">
+                <p class="shortNameDay">${this.shortNameDay}</p>
+                <p class="numberOfDay">${this.numberOfDay}</p>
+            </div>
+        `
     }
 
     static styles = css`
@@ -67,13 +76,4 @@ export class dayCard extends LitElement {
             font-weight: 400;
         }
     `
-
-    render() {
-        return html`
-            <div class="${classMap(this.activeStyling)}">
-                <p class="shortNameDay">${this.shortNameDay}</p>
-                <p class="numberOfDay">${this.numberOfDay}</p>
-            </div>
-        `
-    }
 }
