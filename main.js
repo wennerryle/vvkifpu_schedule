@@ -1,38 +1,39 @@
-import * as dayjs from "dayjs";
-import "./src/shared/config";
-import "./style.css";
-import "./src/ui/atoms";
-import "./src/ui/molecules";
+import './src/shared/config';
+import './style.css';
+import './src/ui/atoms';
+import './src/ui/molecules';
 
-import { createDayCard } from "./src/ui/atoms/day-card/ui/DayCard";
-import isFirstWeek from "./src/shared/core/isFirstWeek";
+import * as dayjs from 'dayjs';
 
-const monthWithYearHeader = document.getElementById("month_with_year");
-monthWithYearHeader.textContent = dayjs().format("MMMM, YYYY");
+import isFirstWeek from './src/shared/core/isFirstWeek';
+import { createDayCard } from './src/ui/atoms/day-card/ui/DayCard';
 
-const isFirstWeekHeader = document.getElementById("is_first_week");
+const monthWithYearHeader = document.querySelector('#month_with_year');
+monthWithYearHeader.textContent = dayjs().format('MMMM, YYYY');
+
+const isFirstWeekHeader = document.querySelector('#is_first_week');
 isFirstWeekHeader.textContent = isFirstWeek()
-  ? "Первая неделя"
-  : "Вторая неделя";
+  ? 'Первая неделя'
+  : 'Вторая неделя';
 
 const today = dayjs();
-const weeks = document.getElementById("weeks");
+const weeks = document.querySelector('#weeks');
 
-weeks.insertAdjacentElement("beforeend", createDayCard(today, true));
+weeks.insertAdjacentElement('beforeend', createDayCard(today, true));
 for (let i = 1; i < 60; i++) {
-  const day = today.add(i, "day");
-  weeks.insertAdjacentElement("beforeend", createDayCard(day));
+  const day = today.add(i, 'day');
+  weeks.insertAdjacentElement('beforeend', createDayCard(day));
 }
 
-const weeksElements = [...document.getElementById("weeks").children];
+const weeksElements = [...document.querySelector('#weeks').children];
 
-let selectedDay = today.clone();
+const selectedDay = today.clone();
 
 weeksElements.forEach((child, _, children) => {
-  child.addEventListener("click", () => {
-    children.forEach((child) => child.removeAttribute("active"));
-    child.setAttribute("active", "");
+  child.addEventListener('click', () => {
+    children.forEach((child) => child.removeAttribute('active'));
+    child.setAttribute('active', '');
   });
 
-  child.addEventListener("onSelectedDay", (e) => console.log(e));
+  child.addEventListener('onSelectedDay', (e) => console.log(e));
 });

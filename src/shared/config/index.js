@@ -1,4 +1,5 @@
-import * as dayjs from "dayjs";
-import "dayjs/locale/ru";
+import 'dayjs/locale/ru';
 
-dayjs.locale("ru");
+import * as dayjs from 'dayjs';
+
+dayjs.locale('ru');

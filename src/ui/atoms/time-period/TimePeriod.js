@@ -1,4 +1,4 @@
-import { LitElement, html, css } from "lit";
+import { css, html, LitElement } from 'lit';
 
 export class TimePeriod extends LitElement {
   static properties = {

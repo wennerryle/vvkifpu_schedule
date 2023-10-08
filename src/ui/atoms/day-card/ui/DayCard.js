@@ -1,6 +1,6 @@
-import * as dayjs from "dayjs";
-import { LitElement, css, html } from "lit";
-import { classMap } from "lit/directives/class-map.js";
+import * as dayjs from 'dayjs';
+import { css, html, LitElement } from 'lit';
+import { classMap } from 'lit/directives/class-map.js';
 
 export class DayCard extends LitElement {
   static properties = {
@@ -9,8 +9,8 @@ export class DayCard extends LitElement {
   };
 
   firstUpdated() {
-    this.addEventListener("click", () => {
-      const onSelectedDay = new Event("onSelectedDay");
+    this.addEventListener('click', () => {
+      const onSelectedDay = new Event('onSelectedDay');
       this.dispatchEvent(onSelectedDay);
     });
   }
@@ -30,7 +30,7 @@ export class DayCard extends LitElement {
   }
 
   set active(val) {
-    this.classesMap.active = typeof val === "string" ? true : false;
+    this.classesMap.active = typeof val === 'string';
     this.requestUpdate();
   }
 
@@ -41,8 +41,8 @@ export class DayCard extends LitElement {
   render() {
     return html`
       <div class="${classMap(this.classesMap)}">
-        <p class="shortNameDay">${this.dateiso.format("dd")}</p>
-        <p class="numberOfDay">${this.dateiso.format("D")}</p>
+        <p class="shortNameDay">${this.dateiso.format('dd')}</p>
+        <p class="numberOfDay">${this.dateiso.format('D')}</p>
       </div>
     `;
   }
@@ -102,10 +102,10 @@ export class DayCard extends LitElement {
  * @param {boolean} isActive Make card selected
  */
 export function createDayCard(dayJSObject, isActive) {
-  let element = document.createElement("day-card");
-  element.setAttribute("dateiso", dayJSObject.toDate().toISOString());
+  const element = document.createElement('day-card');
+  element.setAttribute('dateiso', dayJSObject.toDate().toISOString());
 
-  if (isActive) element.setAttribute("active", "");
+  if (isActive) element.setAttribute('active', '');
 
   return element;
 }
