@@ -16,13 +16,11 @@ isFirstWeekHeader.textContent = isFirstWeek()
 const today = dayjs();
 const weeks = document.getElementById("weeks");
 
-for (let i = 0; i < 60; i++) {
+weeks.insertAdjacentElement("beforeend", createDayCard(today, true));
+for (let i = 1; i < 60; i++) {
   const day = today.add(i, "day");
 
-  weeks.insertAdjacentElement(
-    "beforeend",
-    createDayCard(day.format("dd"), day.format("D"), i === 0 ? true : undefined)
-  );
+  weeks.insertAdjacentElement("beforeend", createDayCard(day));
 }
 
 const weeksElements = [...document.getElementById("weeks").children];

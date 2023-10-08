@@ -8,15 +8,15 @@
 </head>
 <body class="max-w-3xl mx-auto h-screen bg-primary flex flex-col">
   <header class="sm:px-0 px-4">
-    <div class="flex flex-row items-center sm:pt-8">
-      <div class="flex-1 flex-row py-4 sm:py-7">
-        <span class="block sm:text-2xl font-mono capitalize" id="month_with_year"></span>
-        <span class="block sm:text-xl font-mono capitalize" id="is_first_week"></span>
+    <div class="items-start flex flex-col py-4 sm:w-full justify-start sm:flex-row sm:justify-between sm:pt-8 sm:items-center">
+      <div class="flex w-full sm:w-auto justify-between gap-8 sm:gap-0 sm:flex-col sm:py-7">
+        <span class="sm:text-2xl font-mono capitalize" id="month_with_year"></span>
+        <span class="sm:block sm:text-xl font-mono capitalize" id="is_first_week"></span>
       </div>
-      <div class="divider divider-horizontal h-8 self-center" style="--bc: var(--b3)"></div>
-      <a href="https://vk.com/do_is31" target="_blank">Доска объявлений</a>
-      <div class="divider divider-horizontal h-8 self-center" style="--bc: var(--b3)"></div>
-      <a href="https://vk.com/is2021" target="_blank">ИС-2021</a>
+      <div class="flex w-full sm:w-auto justify-between gap-9">
+        <a href="https://vk.com/do_is31" target="_blank">Доска объявлений</a>
+        <a href="https://vk.com/is2021" target="_blank">ИС-2021</a>
+      </div>
     </div>
     <div class="mb-7 flex row gap-3 overflow-y-auto scroll-smooth no-scrollbar" id="weeks"></div>
   </header>

@@ -1,3 +1,4 @@
+import * as dayjs from "dayjs";
 import { LitElement, css, html } from "lit";
 import { classMap } from "lit/directives/class-map.js";
 
@@ -45,8 +46,8 @@ export class DayCard extends LitElement {
     }
 
     .active:hover {
-      background-color: #394277;
-      color: #ffffff;
+      background-color: #e7e7e7;
+      color: #8037ff;
     }
 
     p {
@@ -89,14 +90,15 @@ export class DayCard extends LitElement {
 
 /**
  * Returns DayCard component that can be inserted into HTML
- * @param {*} shortNameDay Name like "Mon"
- * @param {*} numberOfDay Day of month
+ * @param {dayjs.Dayjs} dayJSObject Object dayjs
+ * @param {boolean} isActive Make card selected
  */
-export function createDayCard(shortNameDay, numberOfDay, isActive) {
+export function createDayCard(dayJSObject, isActive) {
   let element = document.createElement("day-card");
 
-  element.setAttribute("shortNameDay", shortNameDay);
-  element.setAttribute("numberOfDay", numberOfDay);
+  element.setAttribute("shortNameDay", dayJSObject.format("dd"));
+  element.setAttribute("numberOfDay", dayJSObject.format("D"));
+
   if (isActive) element.setAttribute("active", "");
 
   return element;
