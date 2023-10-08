@@ -2,8 +2,10 @@ import * as dayjs from "dayjs";
 import "./src/shared/config";
 import "./style.css";
 import "./src/ui/atoms";
-import { createDayCard } from "./src/ui/atoms/data-picker/ui/DayCard";
-import isFirstWeek from "./src/shared/core/utils/isFirstWeek";
+import "./src/ui/molecules";
+
+import { createDayCard } from "./src/ui/atoms/day-card/ui/DayCard";
+import isFirstWeek from "./src/shared/core/isFirstWeek";
 
 const monthWithYearHeader = document.getElementById("month_with_year");
 monthWithYearHeader.textContent = dayjs().format("MMMM, YYYY");
@@ -19,7 +21,6 @@ const weeks = document.getElementById("weeks");
 weeks.insertAdjacentElement("beforeend", createDayCard(today, true));
 for (let i = 1; i < 60; i++) {
   const day = today.add(i, "day");
-
   weeks.insertAdjacentElement("beforeend", createDayCard(day));
 }
 

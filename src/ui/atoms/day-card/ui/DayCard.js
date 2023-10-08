@@ -5,8 +5,7 @@ import { classMap } from "lit/directives/class-map.js";
 export class DayCard extends LitElement {
   static properties = {
     active: {},
-    shortNameDay: {},
-    numberOfDay: {},
+    dateiso: {},
   };
 
   firstUpdated() {
@@ -21,6 +20,15 @@ export class DayCard extends LitElement {
     this.classesMap = { active: false };
   }
 
+  set dateiso(val) {
+    this.dayJSObject = dayjs(val);
+    this.requestUpdate();
+  }
+
+  get dateiso() {
+    return this.dayJSObject;
+  }
+
   set active(val) {
     this.classesMap.active = typeof val === "string" ? true : false;
     this.requestUpdate();
@@ -33,8 +41,8 @@ export class DayCard extends LitElement {
   render() {
     return html`
       <div class="${classMap(this.classesMap)}">
-        <p class="shortNameDay">${this.shortNameDay}</p>
-        <p class="numberOfDay">${this.numberOfDay}</p>
+        <p class="shortNameDay">${this.dateiso.format("dd")}</p>
+        <p class="numberOfDay">${this.dateiso.format("D")}</p>
       </div>
     `;
   }
@@ -95,9 +103,7 @@ export class DayCard extends LitElement {
  */
 export function createDayCard(dayJSObject, isActive) {
   let element = document.createElement("day-card");
-
-  element.setAttribute("shortNameDay", dayJSObject.format("dd"));
-  element.setAttribute("numberOfDay", dayJSObject.format("D"));
+  element.setAttribute("dateiso", dayJSObject.toDate().toISOString());
 
   if (isActive) element.setAttribute("active", "");
 

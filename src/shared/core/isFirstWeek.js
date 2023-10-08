@@ -1,5 +1,5 @@
 import * as dayjs from "dayjs";
-import schedule from "../../../../configuration/schedule.json";
+import schedule from "../../../configuration/schedule.json";
 
 /**
  * Returns true if today is first week. The new week begins on Sunday.
