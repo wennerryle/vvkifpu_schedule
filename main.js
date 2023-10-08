@@ -3,7 +3,7 @@ import './style.css';
 import './src/ui/atoms';
 import './src/ui/molecules';
 
-import * as dayjs from 'dayjs';
+import dayjs from 'dayjs';
 
 import isFirstWeek from './src/shared/core/isFirstWeek';
 import { createDayCard } from './src/ui/atoms/day-card/ui/DayCard';
