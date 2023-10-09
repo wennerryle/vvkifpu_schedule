@@ -1,18 +1,21 @@
 import { css, html, LitElement } from 'lit';
 
-export class LessonCard extends LitElement {
-  constructor() {
-    super();
-  }
+export default class extends LitElement {
+  static properties = {
+    startTime: {},
+    endTime: {},
+    lessonName: {},
+    cabinet: {},
+  };
 
   render() {
     return html`
       <div class="lesson-card">
-        <time-period start="20:18" end="19:47"></time-period>
+        <time-period start="${this.startTime}" end="${this.endTime}"></time-period>
         <div class="divider"></div>
         <div class="card">
-          <h1>Основа разработки web и мобильных приложений</h1>
-          <span>41 кабинет</span>
+          <h1>${this.lessonName}</h1>
+          <span>${this.cabinet}</span>
         </div>
       </div>
     `;

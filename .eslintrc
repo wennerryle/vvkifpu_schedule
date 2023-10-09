@@ -1,3 +1,21 @@
 {
-  "extends": ["auto"]
+  "ignorePatterns": ["**/*.config.js"],
+  "extends": ["airbnb"],
+  "plugins": [
+    "html"
+  ],
+  "env": {
+    "browser": true
+  },
+  // Default parser doesn't support the ES2022 (static methods).
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "requireConfigFile": false
+  },
+  "rules": {
+    // Ignore because of the bugs with Lit import of directives
+    "import/extensions": [0],
+    // Windows git default linebreak-style is \r\n (btw i use windows)
+    "linebreak-style": ["error", "windows"]
+  }
 }

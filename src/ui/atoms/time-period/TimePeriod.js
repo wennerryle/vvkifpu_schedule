@@ -1,14 +1,10 @@
 import { css, html, LitElement } from 'lit';
 
-export class TimePeriod extends LitElement {
+export default class extends LitElement {
   static properties = {
     start: {},
     end: {},
   };
-
-  constructor() {
-    super();
-  }
 
   render() {
     return html`

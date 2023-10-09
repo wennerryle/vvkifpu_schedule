@@ -20,18 +20,18 @@ const today = dayjs();
 const weeks = document.querySelector('#weeks');
 
 weeks.insertAdjacentElement('beforeend', createDayCard(today, true));
-for (let i = 1; i < 60; i++) {
+for (let i = 1; i < 60; i += 1) {
   const day = today.add(i, 'day');
   weeks.insertAdjacentElement('beforeend', createDayCard(day));
 }
 
 const weeksElements = [...document.querySelector('#weeks').children];
 
-const selectedDay = today.clone();
+// const selectedDay = today.clone();
 
 weeksElements.forEach((child, _, children) => {
   child.addEventListener('click', () => {
-    children.forEach((child) => child.removeAttribute('active'));
+    children.forEach((element) => element.removeAttribute('active'));
     child.setAttribute('active', '');
   });
 

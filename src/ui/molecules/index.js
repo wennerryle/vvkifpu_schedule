@@ -1,3 +1,3 @@
-import { LessonCard } from './lesson-card/LessonCard';
+import LessonCard from './lesson-card/LessonCard';
 
 customElements.define('lesson-card', LessonCard);
