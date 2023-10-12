@@ -1,4 +1,4 @@
-import { DayCard } from './day-card/ui/DayCard';
+import { DayCard } from './day-card/DayCard';
 import TimePeriod from './time-period/TimePeriod';
 
 customElements.define('day-card', DayCard);

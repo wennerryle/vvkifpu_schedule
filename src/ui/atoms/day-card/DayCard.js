@@ -1,11 +1,11 @@
-import dayjs from 'dayjs';
 import { css, html, LitElement } from 'lit';
 import { classMap } from 'lit/directives/class-map.js';
 
 export class DayCard extends LitElement {
   static properties = {
     active: {},
-    dateiso: {},
+    shortNameOfDay: {},
+    numberOfDay: {},
   };
 
   firstUpdated() {
@@ -20,15 +20,6 @@ export class DayCard extends LitElement {
     this.classesMap = { active: false };
   }
 
-  set dateiso(val) {
-    this.dayJSObject = dayjs(val);
-    this.requestUpdate();
-  }
-
-  get dateiso() {
-    return this.dayJSObject;
-  }
-
   set active(val) {
     this.classesMap.active = typeof val === 'string';
     this.requestUpdate();
@@ -41,8 +32,8 @@ export class DayCard extends LitElement {
   render() {
     return html`
       <div class="${classMap(this.classesMap)}">
-        <p class="shortNameDay">${this.dateiso.format('dd')}</p>
-        <p class="numberOfDay">${this.dateiso.format('D')}</p>
+        <p class="shortNameDay">${this.shortNameOfDay}</p>
+        <p class="numberOfDay">${this.numberOfDay}</p>
       </div>
     `;
   }
@@ -103,7 +94,8 @@ export class DayCard extends LitElement {
  */
 export function createDayCard(dayJSObject, isActive) {
   const element = document.createElement('day-card');
-  element.setAttribute('dateiso', dayJSObject.toDate().toISOString());
+  element.setAttribute('shortnameofday', dayJSObject.format('dd'));
+  element.setAttribute('numberofday', dayJSObject.format('D'));
 
   if (isActive) element.setAttribute('active', '');
 
