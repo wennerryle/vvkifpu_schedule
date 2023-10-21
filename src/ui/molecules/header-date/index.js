@@ -2,9 +2,9 @@
  * Set day at header
  * @param {dayjs.Dayjs} dayJSObject
  */
+
 export function setCurrentMonth(dayJSObject) {
   const monthWithYearHeader = document.querySelector('#month_with_year');
-
   monthWithYearHeader.textContent = dayJSObject.format('MMMM, YYYY');
 }
 

@@ -1,24 +1,31 @@
 import { createDayCard } from '../../atoms/day-card/DayCard';
+import DatesStore from '../../../core/DatesStore';
+
+const weeks = document.querySelector('#weeks');
+const loadMoreButton = document.querySelector('#load_more');
 
 export default function renderWeeksAtHeader(dayOfStart) {
-  const weeks = document.querySelector('#weeks');
-
-  weeks.insertAdjacentElement('beforeend', createDayCard(dayOfStart, true));
+  const firstDayCard = createDayCard(dayOfStart, true);
+  firstDayCard.addEventListener('click', () => {
+    DatesStore.selectedDay = dayOfStart;
+  });
+  weeks.insertBefore(firstDayCard, loadMoreButton);
   for (let i = 1; i < 60; i += 1) {
     const day = dayOfStart.add(i, 'day');
     const dayCard = createDayCard(day);
-    // TODO: implement this function
     dayCard.addEventListener('click', () => {
+      DatesStore.selectedDay = day;
     });
-    weeks.insertAdjacentElement('beforeend', dayCard);
+    weeks.insertBefore(dayCard, loadMoreButton);
   }
 
   const weeksElements = [...document.querySelector('#weeks').children];
-
-  weeksElements.forEach((child, _, children) => {
-    child.addEventListener('click', () => {
-      children.forEach((element) => element.removeAttribute('active'));
-      child.setAttribute('active', '');
+  let [currentSelectedWeekElement] = weeksElements;
+  weeksElements.forEach((weekElement) => {
+    weekElement.addEventListener('click', () => {
+      currentSelectedWeekElement?.removeAttribute('active');
+      currentSelectedWeekElement = weekElement;
+      weekElement.setAttribute('active', '');
     });
   });
 }

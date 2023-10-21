@@ -94,9 +94,9 @@ export class DayCard extends LitElement {
  */
 export function createDayCard(dayJSObject, isActive) {
   const element = document.createElement('day-card');
+
   element.setAttribute('shortnameofday', dayJSObject.format('dd'));
   element.setAttribute('numberofday', dayJSObject.format('D'));
-
   if (isActive) element.setAttribute('active', '');
 
   return element;

@@ -1,6 +1,6 @@
 import { css, html, LitElement } from 'lit';
 
-export default class extends LitElement {
+export default class LessonCard extends LitElement {
   static properties = {
     startTime: {},
     endTime: {},
@@ -54,4 +54,22 @@ export default class extends LitElement {
       border: 1px dashed black;
     }
   `;
+}
+
+/**
+ * Return LessonCard element
+ * @param {string} startTime
+ * @param {string} endTime
+ * @param {string} lessonName
+ * @param {number} cabinet
+ */
+export function createLessonCard(startTime, endTime, lessonName, cabinet) {
+  const element = document.createElement('lesson-card');
+
+  element.setAttribute('starttime', startTime);
+  element.setAttribute('endtime', endTime);
+  element.setAttribute('lessonname', lessonName);
+  element.setAttribute('cabinet', cabinet);
+
+  return element;
 }
