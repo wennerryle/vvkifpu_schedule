@@ -5,8 +5,8 @@
   <link rel="icon" type="image/svg+xml" href="/vvkifpu_schedule/vite.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Расписание ИС-31</title>
-  <script type="module" crossorigin src="/vvkifpu_schedule/assets/index-47e80426.js"></script>
-  <link rel="stylesheet" href="/vvkifpu_schedule/assets/index-8ef0bdb5.css">
+  <script type="module" crossorigin src="/vvkifpu_schedule/assets/index-57d36660.js"></script>
+  <link rel="stylesheet" href="/vvkifpu_schedule/assets/index-e05ceb91.css">
 </head>
 <body class="max-w-3xl mx-auto h-screen bg-primary flex flex-col">
   <header>
@@ -18,12 +18,18 @@
       <div class="flex w-full sm:w-auto justify-between gap-9">
         <a href="https://vk.com/do_is31" target="_blank">Доска объявлений</a>
         <a href="https://vk.com/is2021" target="_blank">ИС-2021</a>
+        <input type="date" id="datepicker" class="rounded-full px-2 text-black">
       </div>
     </div>
-    <div class="mb-7 px-4 sm:pl-0 flex row gap-3 overflow-y-auto scroll-smooth no-scrollbar" id="weeks"></div>
+    <div class="mb-7 px-4 sm:px-0 flex row gap-3 overflow-y-auto scroll-smooth no-scrollbar" id="weeks">
+      <div
+      id="load_more"
+      class="flex items-center bg-[rgb(128,55,255)] text-white text-1xl rounded-3xl cursor-pointer text-center px-4 ml-4">
+        Загрузить ещё
+      </div>
+    </div>
   </header>
   <main class="flex flex-col gap-4 bg-base-200 rounded-t-3xl p-6 w-full flex-1">
-    <lesson-card></lesson-card>
   </main>
   
 </body>
