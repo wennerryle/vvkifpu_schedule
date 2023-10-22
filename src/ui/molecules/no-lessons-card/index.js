@@ -5,7 +5,7 @@ export default class NoLessonsCard extends LitElement {
     return html`
       <div class="lesson-card">
         <div class="card">
-          <h1>На этот день нету пар.</h1>
+          <h1>На этот день нет пар.</h1>
         </div>
       </div>
     `;
