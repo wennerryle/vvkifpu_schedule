@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/vvkifpu_schedule/sw.js', { scope: '/vvkifpu_schedule/' })})}

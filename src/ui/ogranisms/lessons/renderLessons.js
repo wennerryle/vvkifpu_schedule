@@ -43,12 +43,14 @@ export default function renderLessons(numberOfDay, currentWeek) {
 
       lastLessonEnd = lessonStart.add(60 + 35, 'm');
       const lessonCard = createLessonCard(
-        String(lessonStart.format('HH:mm')),
-        String(lastLessonEnd.format('HH:mm')),
+        lessonStart.format('HH:mm'),
+        lastLessonEnd.format('HH:mm'),
         lessonName,
         cabinet,
       );
       main.insertAdjacentElement('beforeend', lessonCard);
+
+      // Betweens lessons
       lastLessonEnd = lastLessonEnd.add(10, 'm');
     }
   }
