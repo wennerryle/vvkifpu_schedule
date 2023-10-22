@@ -8,13 +8,6 @@ export class DayCard extends LitElement {
     numberOfDay: {},
   };
 
-  firstUpdated() {
-    this.addEventListener('click', () => {
-      const onSelectedDay = new Event('onSelectedDay');
-      this.dispatchEvent(onSelectedDay);
-    });
-  }
-
   constructor() {
     super();
     this.classesMap = { active: false };
