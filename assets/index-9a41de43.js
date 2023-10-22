@@ -151,7 +151,7 @@ var be=Object.defineProperty;var Me=(n,t,e)=>t in n?be(n,t,{enumerable:!0,config
   `);function Gt(n,t,e,s){const r=document.createElement("lesson-card");return r.setAttribute("starttime",n),r.setAttribute("endtime",t),r.setAttribute("lessonname",e),r.setAttribute("cabinet",s),r}class _e extends w{render(){return ct`
       <div class="lesson-card">
         <div class="card">
-          <h1>На этот день нету пар.</h1>
+          <h1>На этот день нет пар.</h1>
         </div>
       </div>
     `}}E(_e,"styles",lt`
