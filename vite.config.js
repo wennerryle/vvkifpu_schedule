@@ -13,7 +13,7 @@ export default defineConfig({
         name: 'Расписание занятий ИС-31',
         short_name: 'Пары ИС-31',
         description: 'Пары, пары, пары..',
-        theme_color: '#ffffff',
+        theme_color: '#570df8',
         icons: [
           {
             src: '/vvkifpu_schedule/android-chrome-192x192.png',
