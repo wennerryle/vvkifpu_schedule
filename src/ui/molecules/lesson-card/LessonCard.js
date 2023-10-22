@@ -53,6 +53,10 @@ export default class LessonCard extends LitElement {
     .divider {
       border: 1px dashed black;
     }
+
+    @media (prefers-color-scheme: dark) {
+      .divider { border-color: white; }
+    }
   `;
 }
 

@@ -29,6 +29,10 @@ export default class extends LitElement {
       font-weight: 500;
     }
 
+    @media (prefers-color-scheme: dark) {
+      .start { color: white; }
+    }
+
     .end {
       color: #7a7a7a;
       font-size: 20px;
