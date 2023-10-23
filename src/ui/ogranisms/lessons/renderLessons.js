@@ -2,15 +2,15 @@ import dayjs from 'dayjs/esm';
 import getScheduleOrNull from '../../../core/getScheduleOrNull';
 import { createLessonCard } from '../../molecules/lesson-card/LessonCard';
 import callSchedule from '../../../../configuration/call_schedule.json';
-import DatesStore from '../../../core/DatesStore';
 import { createNoLessonsCard } from '../../molecules/no-lessons-card';
 
 /**
  * Render lessons
- * @param {number} numberOfDay
+ * @param {dayjs.Dayjs} selectedDay A Day.js object
  * @param {number} currentWeek
  */
-export default function renderLessons(numberOfDay, currentWeek) {
+export default function renderLessons(selectedDay, currentWeek) {
+  const numberOfDay = selectedDay.day();
   const lessons = getScheduleOrNull(numberOfDay, currentWeek);
   const main = document.querySelector('main');
   main.innerHTML = '';
@@ -34,7 +34,7 @@ export default function renderLessons(numberOfDay, currentWeek) {
       const lessonItem = customLessons[lesson - 1];
       const [lessonName, cabinet] = lessonItem.split('|');
 
-      let lessonStart = dayjs(DatesStore.selectedDay)
+      let lessonStart = dayjs(selectedDay)
         .hour(startHour)
         .minute(startMinute)
         .second(0);

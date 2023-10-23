@@ -14,7 +14,7 @@ const currentWeek = getCurrentWeek(today);
 
 setCurrentMonth(today);
 renderWeeksAtHeader(today);
-renderLessons(today.day(), currentWeek);
+renderLessons(today, currentWeek);
 setNumberOfWeek(currentWeek);
 
 const datepicker = document.getElementById('datepicker');

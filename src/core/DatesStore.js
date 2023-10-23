@@ -16,9 +16,8 @@ export default class DatesStore {
   static set selectedDay(day) {
     DatesStore.#selectedDay = day;
     const currentWeek = getLastNumberInSeries(day.diff(DatesStore.referencePointOfWeeks, 'w'), 2);
-    const numberOfWeek = day.day();
     setCurrentMonth(day);
     setNumberOfWeek(currentWeek);
-    renderLessons(numberOfWeek, currentWeek);
+    renderLessons(day, currentWeek);
   }
 }
