@@ -1,1 +1,0 @@
-if('serviceWorker' in navigator) navigator.serviceWorker.register('/vvkifpu_schedule/dev-sw.js?dev-sw', { scope: '/vvkifpu_schedule/', type: 'classic' })
