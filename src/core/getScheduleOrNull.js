@@ -1,4 +1,4 @@
-import schedule from '../../configuration/schedule';
+import schedule from "../../configuration/schedule";
 
 /**
  * Get schedule for selected day.
@@ -7,5 +7,5 @@ import schedule from '../../configuration/schedule';
  * @returns {(string[] | {customTime: string, lessons: string[]}) | null}
  */
 export default function getScheduleOrNull(numberOfWeek, currentWeek) {
-  return schedule.weeks[currentWeek - 1][numberOfWeek];
+  return schedule.weeks?.[currentWeek - 1]?.[numberOfWeek] || null;
 }
