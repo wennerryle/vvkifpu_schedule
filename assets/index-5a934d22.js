@@ -105,7 +105,10 @@ var Me=Object.defineProperty;var be=(n,t,e)=>t in n?Me(n,t,{enumerable:!0,config
     }
   `);customElements.define("day-card",Et);customElements.define("time-period",Mt);class bt extends w{render(){return ct`
       <div class="lesson-card">
-        <time-period start="${this.startTime}" end="${this.endTime}"></time-period>
+        <time-period
+          start="${this.startTime}"
+          end="${this.endTime}"
+        ></time-period>
         <div class="divider"></div>
         <div class="card">
           <h1>${this.lessonName}</h1>
@@ -115,6 +118,7 @@ var Me=Object.defineProperty;var be=(n,t,e)=>t in n?Me(n,t,{enumerable:!0,config
     `}}E(bt,"properties",{startTime:{},endTime:{},lessonName:{},cabinet:{}}),E(bt,"styles",lt`
     .lesson-card {
       display: flex;
+      justify-items: center;
       gap: 18px;
     }
 
@@ -123,30 +127,32 @@ var Me=Object.defineProperty;var be=(n,t,e)=>t in n?Me(n,t,{enumerable:!0,config
       flex: 1;
       flex-direction: column;
       gap: 8px;
-      padding: 15px 20px;
+      padding: 16px;
       border-radius: 25px;
       background: #5659fc;
     }
 
     span {
       padding: 6px 17px;
-      border-radius: 63px;
+      border-radius: 12px;
       background: #fff;
       color: #3e45c9;
     }
 
     h1 {
       color: #fff;
-      font-size: 20px;
+      font-size: large;
       font-weight: 500;
     }
 
     .divider {
-      border: 1px dashed black;
+      border-right: 1px dashed black;
     }
 
     @media (prefers-color-scheme: dark) {
-      .divider { border-color: white; }
+      .divider {
+        border-color: white;
+      }
     }
   `);function Gt(n,t,e,r){const s=document.createElement("lesson-card");return s.setAttribute("starttime",n),s.setAttribute("endtime",t),s.setAttribute("lessonname",e),s.setAttribute("cabinet",r),s}class _e extends w{render(){return ct`
       <div class="lesson-card">
