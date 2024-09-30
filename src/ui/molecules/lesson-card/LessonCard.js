@@ -1,4 +1,4 @@
-import { css, html, LitElement } from 'lit';
+import { css, html, LitElement } from "lit";
 
 export default class LessonCard extends LitElement {
   static properties = {
@@ -11,7 +11,10 @@ export default class LessonCard extends LitElement {
   render() {
     return html`
       <div class="lesson-card">
-        <time-period start="${this.startTime}" end="${this.endTime}"></time-period>
+        <time-period
+          start="${this.startTime}"
+          end="${this.endTime}"
+        ></time-period>
         <div class="divider"></div>
         <div class="card">
           <h1>${this.lessonName}</h1>
@@ -24,6 +27,7 @@ export default class LessonCard extends LitElement {
   static styles = css`
     .lesson-card {
       display: flex;
+      justify-items: center;
       gap: 18px;
     }
 
@@ -32,30 +36,32 @@ export default class LessonCard extends LitElement {
       flex: 1;
       flex-direction: column;
       gap: 8px;
-      padding: 15px 20px;
+      padding: 16px;
       border-radius: 25px;
       background: #5659fc;
     }
 
     span {
       padding: 6px 17px;
-      border-radius: 63px;
+      border-radius: 12px;
       background: #fff;
       color: #3e45c9;
     }
 
     h1 {
       color: #fff;
-      font-size: 20px;
+      font-size: large;
       font-weight: 500;
     }
 
     .divider {
-      border: 1px dashed black;
+      border-right: 1px dashed black;
     }
 
     @media (prefers-color-scheme: dark) {
-      .divider { border-color: white; }
+      .divider {
+        border-color: white;
+      }
     }
   `;
 }
@@ -68,12 +74,12 @@ export default class LessonCard extends LitElement {
  * @param {number} cabinet
  */
 export function createLessonCard(startTime, endTime, lessonName, cabinet) {
-  const element = document.createElement('lesson-card');
+  const element = document.createElement("lesson-card");
 
-  element.setAttribute('starttime', startTime);
-  element.setAttribute('endtime', endTime);
-  element.setAttribute('lessonname', lessonName);
-  element.setAttribute('cabinet', cabinet);
+  element.setAttribute("starttime", startTime);
+  element.setAttribute("endtime", endTime);
+  element.setAttribute("lessonname", lessonName);
+  element.setAttribute("cabinet", cabinet);
 
   return element;
 }
