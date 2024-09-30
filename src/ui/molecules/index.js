@@ -1,5 +1,5 @@
-import LessonCard from './lesson-card/LessonCard';
-import NoLessonsCard from './no-lessons-card';
+import LessonCard from "./LessonCard";
+import NoLessonsCard from "./NoLessonsCard";
 
-customElements.define('lesson-card', LessonCard);
-customElements.define('no-lessons-card', NoLessonsCard);
+LessonCard.init();
+NoLessonsCard.init();
