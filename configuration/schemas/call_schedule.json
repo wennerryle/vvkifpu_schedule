@@ -1,0 +1,17 @@
+{
+  "$ref": "#/definitions/CallSchedule",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "CallSchedule": {
+      "items": {
+        "items": {
+          "type": "string"
+        },
+        "maxItems": 2,
+        "minItems": 2,
+        "type": "array"
+      },
+      "type": "array"
+    }
+  }
+}

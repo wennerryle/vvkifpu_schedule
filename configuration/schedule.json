@@ -1,4 +1,5 @@
 {
+  "$schema": "./schemas/schedule.json",
   "firstWeek": "2023-09-18",
   "weeks": [
     [

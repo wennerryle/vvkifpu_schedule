@@ -1,0 +1,72 @@
+{
+  "$ref": "#/definitions/Schedule",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "Schedule": {
+      "additionalProperties": false,
+      "properties": {
+        "$schema": {
+          "type": "string"
+        },
+        "firstWeek": {
+          "description": "MUST BE IN ISO 8061. Starts with Monday",
+          "type": "string"
+        },
+        "weeks": {
+          "items": {
+            "items": {
+              "anyOf": [
+                {
+                  "items": {
+                    "anyOf": [
+                      {
+                        "type": [
+                          "string",
+                          "null"
+                        ]
+                      },
+                      {
+                        "additionalProperties": false,
+                        "properties": {
+                          "customTime": {
+                            "type": "string"
+                          },
+                          "lessons": {
+                            "items": {
+                              "type": [
+                                "string",
+                                "null"
+                              ]
+                            },
+                            "type": "array"
+                          }
+                        },
+                        "required": [
+                          "customTime",
+                          "lessons"
+                        ],
+                        "type": "object"
+                      }
+                    ]
+                  },
+                  "type": "array"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "type": "array"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "$schema",
+        "firstWeek",
+        "weeks"
+      ],
+      "type": "object"
+    }
+  }
+}
